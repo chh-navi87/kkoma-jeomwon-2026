@@ -119,6 +119,69 @@ body{font-family:'Pretendard','Noto Sans KR','Malgun Gothic',sans-serif;color:va
 .fee b{color:var(--red)}
 .mascot.m2{width:112px;animation:none;margin:0 auto 4px}
 @media (max-height:700px){.mascot.m2{width:84px}}
+
+/* ---- 신청서 화면 ---- */
+.fm{position:absolute;inset:0;z-index:20;background:#fffdf6;display:none;flex-direction:column;color:var(--ink)}
+.fm.on{display:flex}
+.fm-top{flex:none;height:54px;display:flex;align-items:center;gap:6px;padding:0 10px;background:#fff;border-bottom:3px dashed var(--peach)}
+.fm-top button{border:0;background:none;font:inherit;font-size:17px;font-weight:800;color:var(--ink);padding:10px 8px;cursor:pointer}
+.fm-top b{flex:1;text-align:center;font-family:'Jua','Noto Sans KR',sans-serif;font-weight:400;font-size:19px;color:var(--red);margin-right:52px}
+.fm-body{flex:1;overflow-y:auto;overflow-x:hidden;padding:14px 16px 48px;-webkit-overflow-scrolling:touch;font-size:16.5px;line-height:1.6}
+.fm h2{font-size:clamp(24px,7vw,30px);line-height:1.3;letter-spacing:-.02em}
+.fm h2 em{font-style:normal;color:var(--red);background:linear-gradient(transparent 62%,#ffe08a 62%)}
+.fm .intro{margin-top:10px;background:#fff;border:2px solid #e8dccb;border-radius:18px;padding:12px 14px;font-size:15.5px}
+.fm .intro li{list-style:none;padding:2px 0}
+.fm .intro li b{display:inline-block;min-width:44px;color:var(--red)}
+.fm .pay{margin-top:10px;background:#fff6dc;border:2px solid #f2c14b;border-radius:18px;padding:12px 14px;font-size:15.5px}
+.fm .pay .acct{display:flex;align-items:center;justify-content:space-between;gap:8px;margin:6px 0;background:#fff;border-radius:12px;padding:8px 10px}
+.fm .pay .acct b{font-size:17px;white-space:nowrap}
+.fm .pay .acct small{display:block;font-size:13.5px;color:#7a5c3e}
+.fm .mini{border:2px solid var(--ink);background:#fff;color:var(--ink);border-radius:999px;font:inherit;font-size:14px;font-weight:800;padding:6px 12px;cursor:pointer;flex:none}
+.fm .how{margin-top:10px;background:#fdecec;border:2px solid var(--red);border-radius:18px;padding:10px 14px;font-size:15.5px;font-weight:700}
+.fm .how em{font-style:normal;color:var(--red)}
+.fm .sec{margin-top:22px;display:flex;align-items:center;gap:8px;font-family:'Jua','Noto Sans KR',sans-serif;font-size:22px}
+.fm .sec i{font-style:normal;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;display:grid;place-items:center;font-size:16px}
+.fm .q{margin-top:10px;background:#fff;border:2px solid #e8dccb;border-radius:18px;padding:13px 14px}
+.fm .q.bad{border-color:var(--red);background:#fffafa}
+.fm .q>label.t,.fm .q>.t{display:block;font-weight:800;font-size:17px;line-height:1.45}
+.fm .req{color:var(--red);font-size:13px;font-weight:800;margin-left:4px}
+.fm .opt-l{color:#8a7260;font-size:13px;font-weight:700;margin-left:4px}
+.fm .help{margin-top:2px;font-size:14px;color:#7a6552;line-height:1.5}
+.fm input[type=text],.fm input[type=tel],.fm textarea{width:100%;margin-top:8px;font:inherit;font-size:17px;padding:12px;border:2px solid #d9c9b3;border-radius:12px;background:#fff;color:var(--ink)}
+.fm textarea{min-height:84px;resize:vertical}
+.fm input:focus,.fm textarea:focus{outline:3px solid #ffd0cc;border-color:var(--red)}
+.fm .o{display:flex;align-items:center;gap:10px;margin-top:8px;padding:11px 12px;border:2px solid #e8dccb;border-radius:14px;background:#fff;font-size:16.5px;cursor:pointer}
+.fm .o input{width:22px;height:22px;flex:none;accent-color:var(--red);margin:0}
+.fm .o span{flex:1}
+.fm .o:has(input:checked){border-color:var(--red);background:#fff3f1;font-weight:700}
+.fm .o.off{opacity:.5;cursor:not-allowed;background:#f4efe6}
+.fm .o .bd{flex:none;background:var(--red);color:#fff;font-size:13px;font-weight:800;border-radius:999px;padding:0 10px}
+.fm .grid{display:grid;grid-template-columns:1fr 1fr;gap:0 8px}
+.fm .sub{display:none;margin-top:8px}
+.fm .sub.on{display:block}
+.fm .box{margin-top:8px;background:#faf5ea;border-radius:12px;padding:10px 12px;font-size:14.5px;line-height:1.6}
+.fm .box li{margin-left:18px}
+.fm .box b{color:var(--red)}
+.fm .em{color:var(--red);font-weight:800;font-size:13.5px;margin-top:6px;display:none}
+.fm .q.bad .em{display:block}
+.fm .go{display:block;width:100%;margin-top:22px;border:0;background:var(--red);color:#fff;font-family:'Jua','Noto Sans KR',sans-serif;font-size:23px;padding:14px 8px 16px;border-radius:999px;cursor:pointer}
+.fm .go:disabled{opacity:.45;cursor:not-allowed}
+.fm .note{margin-top:10px;text-align:center;font-size:14px;color:#7a6552}
+.fm .err-sum{display:none;margin-top:12px;background:#fdecec;border:2px solid var(--red);border-radius:14px;padding:10px 12px;font-weight:800;color:var(--red);font-size:15.5px}
+.fm .err-sum.on{display:block}
+.fm .done{display:none}
+.fm.sent .form{display:none}
+.fm.sent .done{display:block}
+.fm .done .big{margin-top:6px;font-family:'Jua','Noto Sans KR',sans-serif;font-size:clamp(26px,7.6vw,32px);line-height:1.3}
+.fm .done .big em{font-style:normal;color:var(--red);background:linear-gradient(transparent 62%,#ffe08a 62%)}
+.fm .steps{margin-top:12px;display:grid;gap:8px}
+.fm .steps div{display:flex;gap:10px;align-items:flex-start;background:#fff;border:2px solid #e8dccb;border-radius:16px;padding:10px 12px;font-size:16px}
+.fm .steps i{flex:none;font-style:normal;width:26px;height:26px;border-radius:50%;background:var(--red);color:#fff;display:grid;place-items:center;font-weight:800;font-size:14px;margin-top:1px}
+.fm a.go{text-decoration:none;text-align:center}
+.fm .go.alt{background:#fff;color:var(--ink);border:2px solid var(--ink);font-size:19px;padding:11px 8px 13px;margin-top:10px}
+.fm pre{margin-top:10px;white-space:pre-wrap;word-break:break-all;font:inherit;font-size:14.5px;line-height:1.6;background:#faf5ea;border-radius:12px;padding:10px 12px}
+.toast{position:absolute;left:50%;bottom:24px;transform:translateX(-50%);background:var(--ink);color:#fff;font-size:15px;font-weight:700;padding:9px 18px;border-radius:999px;z-index:30;display:none}
+.toast.on{display:block}
 </style>
 </head>
 <body>
@@ -253,13 +316,123 @@ body{font-family:'Pretendard','Noto Sans KR','Malgun Gothic',sans-serif;color:va
     <div class="st"><span>⭐</span><span style="font-size:26px">✨</span><span>⭐</span></div>
     <p class="sm">우리 아이의 첫 출근,</p>
     <h3>11월 1일에 <em>만나요!</em></h3>
-    <a class="btn" href="#apply">온라인 신청서 작성하기 ✏️<small>링크 준비 중 · 신청 링크가 열리면 연결돼요</small></a>
+    <a class="btn" href="#apply" id="openForm">온라인 신청서 작성하기 ✏️<small>작성 후 문자로 접수해요</small></a>
   </div>
   <div class="fee">원하는 시간대 <b>1개</b> 선택 · 회차당 <b>6명</b> 선착순<br>참가비 <b>1만원</b>은 생활재 교환권으로 돌려드려요</div>
   <div class="ct">문의<br><a href="tel:01066536294">010-6653-6294</a><small>춘천두레생협 활동실 공식전화</small></div>
 </div></section>
 </main>
 <div class="nav"><button class="nb" id="pv" type="button" aria-label="이전 화면">&#8249;</button><div class="dots" id="dots"></div><span class="cnt" id="cnt"></span><button class="nb" id="nx" type="button" aria-label="다음 화면">&#8250;</button></div>
+
+<div class="fm" id="fm" role="dialog" aria-label="일일 꼬마 점원 신청서" aria-modal="true">
+  <div class="fm-top"><button type="button" id="fmClose">&#8249; 닫기</button><b>신청서</b></div>
+  <div class="fm-body" id="fmBody">
+  <div class="form">
+    <h2>엄마, 나 오늘 <em>두레생협으로 출근</em>해요!<br>일일 꼬마 점원 신청서</h2>
+    <ul class="intro">
+      <li><b>일시</b> 2026년 11월 1일(일) 오후 2시 ~ 5시</li>
+      <li><b>장소</b> 춘천두레생협 매장</li>
+      <li><b>대상</b> 5세 ~ 초등 저학년 · 어린이 1인당 1신청</li>
+      <li><b>체험</b> 신청한 타임 20분 집중 체험 후, 이어서 3가지 체험 행사</li>
+      <li><b>문의</b> <a href="tel:01066536294" style="color:var(--red);font-weight:800">010-6653-6294</a></li>
+    </ul>
+    <div class="pay">
+      <b>참가비 1인당 10,000원</b><br>
+      노쇼 방지용 예약 보증금이에요. <b style="color:var(--red)">행사 당일 현장에 출석하시면 춘천두레생협 생활재 교환권으로 돌려드려요.</b>
+      <div class="acct"><div><b>농협 351-0320-3635-43</b><small>예금주 춘천두레소비자생활협동조합</small></div><button type="button" class="mini" id="cpAcct">계좌 복사</button></div>
+      입금자명은 <b>&lsquo;보호자 성함(아이 이름)&rsquo;</b>으로 부탁드려요. 예: 홍길동(김두레)<br>
+      신청 후 <b>24시간 이내</b>에 입금이 없으면 자동 취소될 수 있어요.
+    </div>
+    <div class="how">접수 방법: 아래를 작성하고 <em>&lsquo;문자로 접수하기&rsquo;</em>를 누르면 문자 앱이 열려요. <em>문자 전송까지 눌러야 접수</em>돼요!</div>
+
+    <div class="sec"><i>1</i>보호자 정보</div>
+    <div class="q" data-q="gname"><label class="t" for="gname">신청자(보호자) 성함<span class="req">필수</span></label>
+      <input type="text" id="gname" autocomplete="name" maxlength="20"><div class="em">성함을 적어 주세요.</div></div>
+    <div class="q" data-q="gtel"><label class="t" for="gtel">보호자 연락처 (휴대전화)<span class="req">필수</span></label>
+      <div class="help">선정 안내와 행사 안내 문자를 보내는 데 써요.</div>
+      <input type="tel" id="gtel" inputmode="numeric" autocomplete="tel" placeholder="010-0000-0000" maxlength="13"><div class="em">휴대전화 번호를 010-0000-0000 형식으로 적어 주세요.</div></div>
+    <div class="q" data-q="member"><div class="t">조합원 여부<span class="req">필수</span></div>
+      <label class="o"><input type="radio" name="member" value="조합원"><span>조합원</span></label>
+      <label class="o"><input type="radio" name="member" value="비조합원"><span>비조합원 (예비 조합원)</span></label>
+      <div class="sub" id="memSub"><label class="t" for="memno" style="font-size:15.5px;font-weight:700">조합원 번호 또는 등록 전화번호 뒷자리<span class="opt-l">선택</span></label>
+      <input type="text" id="memno" maxlength="20" style="margin-top:4px"></div>
+      <div class="em">조합원 여부를 골라 주세요.</div></div>
+
+    <div class="sec"><i>2</i>참가 어린이 정보</div>
+    <div class="q" data-q="kname"><label class="t" for="kname">참여 어린이 이름<span class="req">필수</span></label>
+      <input type="text" id="kname" maxlength="20"><div class="em">어린이 이름을 적어 주세요.</div></div>
+    <div class="q" data-q="age"><div class="t">어린이 연령 &middot; 학년<span class="req">필수</span></div>
+      <div class="help">명찰 제작과 활동 눈높이 맞춤에 써요.</div>
+      <div class="grid"><label class="o"><input type="radio" name="age" value="5세"><span>5세</span></label><label class="o"><input type="radio" name="age" value="6세"><span>6세</span></label><label class="o"><input type="radio" name="age" value="7세"><span>7세</span></label><label class="o"><input type="radio" name="age" value="초등 1학년"><span>초등 1학년</span></label><label class="o"><input type="radio" name="age" value="초등 2학년"><span>초등 2학년</span></label><label class="o"><input type="radio" name="age" value="초등 3학년"><span>초등 3학년</span></label></div><div class="em">연령·학년을 골라 주세요.</div></div>
+    <div class="q"><label class="t" for="sib">형제 &middot; 자매 추가 신청<span class="opt-l">선택</span></label>
+      <div class="help">형제·자매가 같은 타임에 참여하길 원하면 각각 신청서를 작성해 주시거나, 여기에 어린이 이름과 연령을 적어 주세요. (참가비는 어린이 1인당 1만원이에요.)</div>
+      <textarea id="sib" maxlength="200"></textarea></div>
+
+    <div class="sec"><i>3</i>희망 참여 타임</div>
+    <div class="q" data-q="slot1"><div class="t">희망 참여 시간대 (1개)<span class="req">필수</span></div>
+      <div class="help">20분씩, 타임당 6명 선착순이에요.</div>
+      <label class="o" data-slot="1"><input type="radio" name="slot1" value="1"><span>1타임 &nbsp;14:00 ~ 14:20</span><em class="bd" hidden>마감</em></label><label class="o" data-slot="2"><input type="radio" name="slot1" value="2"><span>2타임 &nbsp;14:20 ~ 14:40</span><em class="bd" hidden>마감</em></label><label class="o" data-slot="3"><input type="radio" name="slot1" value="3"><span>3타임 &nbsp;14:40 ~ 15:00</span><em class="bd" hidden>마감</em></label><label class="o" data-slot="4"><input type="radio" name="slot1" value="4"><span>4타임 &nbsp;15:00 ~ 15:20</span><em class="bd" hidden>마감</em></label><label class="o" data-slot="5"><input type="radio" name="slot1" value="5"><span>5타임 &nbsp;15:20 ~ 15:40</span><em class="bd" hidden>마감</em></label><div class="em">희망 시간대를 골라 주세요.</div></div>
+    <div class="q"><div class="t">2지망 시간대<span class="opt-l">선택</span></div>
+      <div class="help">1지망이 마감될 때를 위한 예비 시간대예요.</div>
+      <label class="o"><input type="radio" name="slot2" value="0" checked><span>2지망 없음</span></label><label class="o" data-slot="1"><input type="radio" name="slot2" value="1"><span>1타임 &nbsp;14:00 ~ 14:20</span><em class="bd" hidden>마감</em></label><label class="o" data-slot="2"><input type="radio" name="slot2" value="2"><span>2타임 &nbsp;14:20 ~ 14:40</span><em class="bd" hidden>마감</em></label><label class="o" data-slot="3"><input type="radio" name="slot2" value="3"><span>3타임 &nbsp;14:40 ~ 15:00</span><em class="bd" hidden>마감</em></label><label class="o" data-slot="4"><input type="radio" name="slot2" value="4"><span>4타임 &nbsp;15:00 ~ 15:20</span><em class="bd" hidden>마감</em></label><label class="o" data-slot="5"><input type="radio" name="slot2" value="5"><span>5타임 &nbsp;15:20 ~ 15:40</span><em class="bd" hidden>마감</em></label></div>
+
+    <div class="sec"><i>4</i>현장 안전 &middot; 운영 확인</div>
+    <div class="q" data-q="allergy"><div class="t">어린이 식품 알레르기<span class="req">필수</span></div>
+      <div class="help">자전거 딸기우유와 과자를 받을 때 안전 관리에 써요.</div>
+      <label class="o"><input type="radio" name="allergy" value="없음"><span>없음</span></label>
+      <label class="o"><input type="radio" name="allergy" value="있음"><span>있음 (딸기, 우유, 특정 과자 성분 등)</span></label>
+      <div class="sub" id="alSub"><label class="t" for="alno" style="font-size:15.5px;font-weight:700">알레르기 내용을 적어 주세요<span class="opt-l">선택</span></label>
+      <input type="text" id="alno" maxlength="60" style="margin-top:4px"></div>
+      <div class="em">알레르기 여부를 골라 주세요.</div></div>
+
+    <div class="q" data-q="c10"><div class="t">참가비 환급 안내 확인<span class="req">필수</span></div>
+      <div class="box"><ol><li>참가비 1만원은 행사 당일 현장에 출석하시면 춘천두레생협 생활재 교환권으로 돌려드려요.</li><li>당일 무단 불참(노쇼) 시에는 교환권 지급과 환불이 되지 않아요.</li></ol></div>
+      <label class="o"><input type="checkbox" id="c10"><span>위 안내를 모두 확인했으며 동의합니다.</span></label><div class="em">환급 안내 확인에 체크해 주세요.</div></div>
+
+    <div class="q" data-q="c11"><div class="t">개인정보 수집 &middot; 이용 동의<span class="req">필수</span></div>
+      <div class="box"><ul>
+        <li><b>수집 항목</b> 보호자 성함·연락처·조합원 번호, 어린이 이름·연령</li>
+        <li><b>수집 목적</b> 행사 신청 확인, 시간 배정, 안내 문자 발송, 참가비 확인과 교환권 지급</li>
+        <li><b>보유 기간</b> 행사 종료 후 3개월 (교환권 지급 확인과 문의 대응이 끝난 뒤 파기)</li>
+        <li>동의를 거부할 수 있으며, 거부하면 신청이 어려워요.</li></ul></div>
+      <label class="o"><input type="checkbox" id="c11"><span>위 내용에 동의합니다.</span></label><div class="em">개인정보 수집·이용에 동의해 주세요.</div></div>
+
+    <div class="q" data-q="c111"><div class="t">민감정보(알레르기) 수집 &middot; 이용 동의<span class="req">필수</span></div>
+      <div class="box"><ul>
+        <li><b>수집 항목</b> 어린이 식품 알레르기 정보</li>
+        <li><b>수집 목적</b> 자전거 딸기우유와 과자를 받을 때 현장 안전 관리</li>
+        <li><b>보유 기간</b> 행사 종료 후 1개월</li>
+        <li>동의를 거부할 수 있으며, 거부하면 알레르기 확인이 안 돼 참여가 어려울 수 있어요.</li></ul></div>
+      <label class="o"><input type="checkbox" id="c111"><span>위 내용에 동의합니다.</span></label><div class="em">민감정보 수집·이용에 동의해 주세요.</div></div>
+
+    <div class="q" data-q="photo"><div class="t">사진 촬영 &middot; 활용 동의<span class="req">필수</span></div>
+      <div class="help">행사 중 활동 사진은 춘천두레생협 소식지와 SNS에 쓰일 수 있어요. 어린이 얼굴이 나올 수 있어요.</div>
+      <label class="o"><input type="radio" name="photo" value="동의"><span>동의합니다</span></label>
+      <label class="o"><input type="radio" name="photo" value="동의 안 함"><span>동의하지 않습니다 (어린이 얼굴이 나오지 않게 촬영해 주세요)</span></label>
+      <div class="em">사진 활용 동의 여부를 골라 주세요.</div></div>
+
+    <div class="err-sum" id="errSum" role="alert">빠진 항목이 있어요. 빨간 표시를 확인해 주세요.</div>
+    <button type="button" class="go" id="submit">문자로 접수하기 &#128233;</button>
+    <p class="note">누르면 문자 앱이 열려요 · 받는 사람 춘천두레생협 010-6653-6294<br>입력한 내용은 이 문자로만 전달돼요.</p>
+  </div>
+
+  <div class="done" id="done">
+    <h2 class="big">아직 접수 전이에요!<br><em>문자 전송</em>을 눌러 주세요</h2>
+    <div class="steps">
+      <div><i>1</i><span>문자 앱이 열리면 내용을 확인하고 <b>전송</b>을 눌러 주세요.</span></div>
+      <div><i>2</i><span>24시간 이내에 참가비 1만원을 입금해 주세요.<br><b>농협 351-0320-3635-43</b> (춘천두레소비자생활협동조합)<br>입금자명 <b id="payName"></b></span></div>
+      <div><i>3</i><span>입금이 확인되면 문자로 안내드려요.</span></div>
+    </div>
+    <a class="go" id="smsA" href="#">문자 앱 열기 &#128233;</a>
+    <button type="button" class="go alt" id="cpMsg">문자 내용 복사하기</button>
+    <button type="button" class="go alt" id="cpAcct2">입금 계좌 복사하기</button>
+    <p class="note">문자 앱이 안 열리면 내용을 복사해서 010-6653-6294로 직접 보내 주세요.</p>
+    <pre id="preview"></pre>
+    <button type="button" class="go alt" id="edit">&#8249; 신청서 수정하기</button>
+  </div>
+  </div>
+  <div class="toast" id="toast" role="status"></div>
+</div>
 </div>
 <script>
 (function(){
@@ -269,7 +442,7 @@ body{font-family:'Pretendard','Noto Sans KR','Malgun Gothic',sans-serif;color:va
   function upd(){var i=Math.round(tr.scrollLeft/tr.clientWidth);if(i<0)i=0;cur=i;[].forEach.call(dots.children,function(d,k){d.setAttribute('aria-current',k===i?'true':'false');});cnt.textContent=(i+1)+' / '+sl.length;pv.disabled=i===0;nx.disabled=i===sl.length-1;}
   tr.addEventListener('scroll',function(){window.requestAnimationFrame(upd);},{passive:true});
   pv.addEventListener('click',function(){go(cur-1);});nx.addEventListener('click',function(){go(cur+1);});
-  document.addEventListener('keydown',function(e){if(e.key==='ArrowRight')go(cur+1);if(e.key==='ArrowLeft')go(cur-1);});
+  document.addEventListener('keydown',function(e){if(document.querySelector('.fm.on'))return;if(e.key==='ArrowRight')go(cur+1);if(e.key==='ArrowLeft')go(cur-1);});
   var app=document.querySelector('.app');
   function fit(){
     app.style.height=window.innerHeight+'px';
@@ -289,6 +462,113 @@ body{font-family:'Pretendard','Noto Sans KR','Malgun Gothic',sans-serif;color:va
   window.addEventListener('resize',function(){fit();tr.scrollLeft=cur*tr.clientWidth;});
   if(window.visualViewport)window.visualViewport.addEventListener('resize',fit);
   upd();
+})();
+</script>
+<script>
+(function(){
+  var CLOSED=[]; /* 마감된 타임 번호. 예: [2,3] */
+  var PHONE='01066536294', ACCT='3510320363543';
+  var fm=document.getElementById('fm'), body=document.getElementById('fmBody'), $=function(id){return document.getElementById(id);};
+  var SLOTTXT={1:'1타임 14:00~14:20',2:'2타임 14:20~14:40',3:'3타임 14:40~15:00',4:'4타임 15:00~15:20',5:'5타임 15:20~15:40'};
+  function val(n){var e=fm.querySelector('input[name="'+n+'"]:checked');return e?e.value:'';}
+  function toast(t){var el=$('toast');el.textContent=t;el.classList.add('on');clearTimeout(toast.t);toast.t=setTimeout(function(){el.classList.remove('on');},1800);}
+  function copy(t,ok){
+    function fb(){var a=document.createElement('textarea');a.value=t;a.style.position='fixed';a.style.opacity='0';document.body.appendChild(a);a.select();var r=false;try{r=document.execCommand('copy');}catch(e){}document.body.removeChild(a);toast(r?ok:'복사가 안 돼요. 직접 길게 눌러 복사해 주세요');}
+    try{if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(function(){toast(ok);},fb);return;}}catch(e){}
+    fb();
+  }
+  /* 마감 반영 */
+  CLOSED.forEach(function(n){
+    var l=fm.querySelectorAll('label[data-slot="'+n+'"]');
+    [].forEach.call(l,function(x){x.classList.add('off');x.querySelector('input').disabled=true;x.querySelector('.bd').hidden=false;});
+    var s3=document.querySelectorAll('#s3 .sl div')[n-1];
+    if(s3){var sp=s3.querySelector('span');sp.textContent='마감';sp.style.background='#9a8a78';sp.style.boxShadow='0 3px 0 #6f6153';}
+  });
+  /* 2지망은 1지망과 같을 수 없음 */
+  function sync2(){
+    var v1=val('slot1');
+    [].forEach.call(fm.querySelectorAll('input[name="slot2"]'),function(i){
+      var off=(i.value!=='0'&&i.value===v1)||CLOSED.indexOf(+i.value)>-1;
+      i.disabled=off;i.parentNode.classList.toggle('off',off);
+      if(off&&i.checked){fm.querySelector('input[name="slot2"][value="0"]').checked=true;}
+    });
+  }
+  fm.addEventListener('change',function(e){
+    var n=e.target.name;
+    if(n==='slot1')sync2();
+    if(n==='member')$('memSub').classList.toggle('on',val('member')==='조합원');
+    if(n==='allergy')$('alSub').classList.toggle('on',val('allergy')==='있음');
+    var q=e.target.closest('.q');if(q)q.classList.remove('bad');
+  });
+  fm.addEventListener('input',function(e){var q=e.target.closest('.q');if(q)q.classList.remove('bad');});
+  $('gtel').addEventListener('input',function(){
+    var d=this.value.replace(/\D/g,'').slice(0,11),o=d;
+    if(d.length>7)o=d.slice(0,3)+'-'+d.slice(3,7)+'-'+d.slice(7);else if(d.length>3)o=d.slice(0,3)+'-'+d.slice(3);
+    this.value=o;
+  });
+  /* 열기 / 닫기 */
+  function open(){fm.classList.add('on');body.scrollTop=0;}
+  function close(){fm.classList.remove('on');}
+  var ob=document.getElementById('openForm');
+  if(ob)ob.addEventListener('click',function(e){e.preventDefault();open();});
+  $('fmClose').addEventListener('click',close);
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});
+  $('cpAcct').addEventListener('click',function(){copy(ACCT,'계좌번호를 복사했어요');});
+  $('cpAcct2').addEventListener('click',function(){copy(ACCT,'계좌번호를 복사했어요');});
+  /* 검증 */
+  function check(){
+    var bad=[];
+    function flag(k,cond){if(cond){var q=fm.querySelector('.q[data-q="'+k+'"]');if(q){q.classList.add('bad');bad.push(q);}}}
+    fm.querySelectorAll('.q.bad').forEach(function(q){q.classList.remove('bad');});
+    flag('gname',!$('gname').value.trim());
+    flag('gtel',!/^01[016789]-?\d{3,4}-?\d{4}$/.test($('gtel').value.trim()));
+    flag('member',!val('member'));
+    flag('kname',!$('kname').value.trim());
+    flag('age',!val('age'));
+    flag('slot1',!val('slot1'));
+    flag('allergy',!val('allergy'));
+    flag('c10',!$('c10').checked);
+    flag('c11',!$('c11').checked);
+    flag('c111',!$('c111').checked);
+    flag('photo',!val('photo'));
+    return bad;
+  }
+  function message(){
+    var g=$('gname').value.trim(),k=$('kname').value.trim(),s2=val('slot2'),mem=val('member'),mn=$('memno').value.trim(),al=val('allergy'),an=$('alno').value.trim(),sib=$('sib').value.trim();
+    var L=['[일일 꼬마 점원 신청]',
+      '희망타임: '+SLOTTXT[val('slot1')],
+      '2지망: '+(s2&&s2!=='0'?SLOTTXT[s2]:'없음'),
+      '보호자: '+g+' / '+$('gtel').value.trim(),
+      '조합원: '+mem+(mem==='조합원'&&mn?' ('+mn+')':''),
+      '어린이: '+k+' / '+val('age'),
+      '형제·자매: '+(sib?sib.replace(/\s*\n\s*/g,', '):'없음'),
+      '알레르기: '+al+(al==='있음'&&an?' - '+an:''),
+      '사진 촬영·활용: '+val('photo'),
+      '동의: 환급안내 확인, 개인정보, 알레르기정보',
+      '입금자명: '+g+'('+k+')',
+      '(참가비 1만원 · 농협 351-0320-3635-43 춘천두레소비자생활협동조합)'];
+    return L.join('\n');
+  }
+  function smsUrl(t){
+    var ios=/iPhone|iPad|iPod/i.test(navigator.userAgent);
+    return 'sms:'+PHONE+(ios?'&':'?')+'body='+encodeURIComponent(t);
+  }
+  var lastMsg='';
+  $('submit').addEventListener('click',function(){
+    var bad=check(),es=$('errSum');
+    if(bad.length){es.classList.add('on');bad[0].scrollIntoView({behavior:'smooth',block:'center'});return;}
+    es.classList.remove('on');
+    lastMsg=message();
+    $('preview').textContent=lastMsg;
+    $('payName').textContent=$('gname').value.trim()+'('+$('kname').value.trim()+')';
+    var u=smsUrl(lastMsg);
+    $('smsA').setAttribute('href',u);
+    fm.classList.add('sent');body.scrollTop=0;
+    try{window.location.href=u;}catch(e){}
+  });
+  $('cpMsg').addEventListener('click',function(){copy(lastMsg,'문자 내용을 복사했어요');});
+  $('edit').addEventListener('click',function(){fm.classList.remove('sent');body.scrollTop=0;});
+  sync2();
 })();
 </script>
 </body>
