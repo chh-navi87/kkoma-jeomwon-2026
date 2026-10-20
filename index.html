@@ -339,9 +339,9 @@ body{font-family:'Pretendard','Noto Sans KR','Malgun Gothic',sans-serif;color:va
     <div class="pay">
       <b>참가비 1인당 10,000원</b><br>
       노쇼 방지용 예약 보증금이에요. <b style="color:var(--red)">행사 당일 현장에 출석하시면 춘천두레생협 생활재 교환권으로 돌려드려요.</b>
-      <div class="acct"><div><b>농협 351-0320-3635-43</b><small>예금주 춘천두레소비자생활협동조합</small></div><button type="button" class="mini" id="cpAcct">계좌 복사</button></div>
+      <br><b>입금 계좌는 접수 순서대로 문자로 안내드려요.</b><br>
       입금자명은 <b>&lsquo;보호자 성함(아이 이름)&rsquo;</b>으로 부탁드려요. 예: 홍길동(김두레)<br>
-      신청 후 <b>24시간 이내</b>에 입금이 없으면 자동 취소될 수 있어요.
+      계좌 안내 문자를 받으신 후 <b>24시간 이내</b>에 입금이 없으면 자동 취소될 수 있어요.
     </div>
     <div class="how">접수 방법: 아래를 작성하고 <em>&lsquo;문자로 접수하기&rsquo;</em>를 누르면 문자 앱이 열려요. <em>문자 전송까지 눌러야 접수</em>돼요!</div>
 
@@ -420,12 +420,11 @@ body{font-family:'Pretendard','Noto Sans KR','Malgun Gothic',sans-serif;color:va
     <h2 class="big">아직 접수 전이에요!<br><em>문자 전송</em>을 눌러 주세요</h2>
     <div class="steps">
       <div><i>1</i><span>문자 앱이 열리면 내용을 확인하고 <b>전송</b>을 눌러 주세요.</span></div>
-      <div><i>2</i><span>24시간 이내에 참가비 1만원을 입금해 주세요.<br><b>농협 351-0320-3635-43</b> (춘천두레소비자생활협동조합)<br>입금자명 <b id="payName"></b></span></div>
+      <div><i>2</i><span>접수 순서대로 <b>입금 계좌를 문자로 안내</b>드려요.<br>안내를 받으신 후 24시간 이내에 참가비 1만원을 입금해 주세요.<br>입금자명 <b id="payName"></b></span></div>
       <div><i>3</i><span>입금이 확인되면 문자로 안내드려요.</span></div>
     </div>
     <a class="go" id="smsA" href="#">문자 앱 열기 &#128233;</a>
     <button type="button" class="go alt" id="cpMsg">문자 내용 복사하기</button>
-    <button type="button" class="go alt" id="cpAcct2">입금 계좌 복사하기</button>
     <p class="note">문자 앱이 안 열리면 내용을 복사해서 010-6653-6294로 직접 보내 주세요.</p>
     <pre id="preview"></pre>
     <button type="button" class="go alt" id="edit">&#8249; 신청서 수정하기</button>
@@ -467,7 +466,7 @@ body{font-family:'Pretendard','Noto Sans KR','Malgun Gothic',sans-serif;color:va
 <script>
 (function(){
   var CLOSED=[]; /* 마감된 타임 번호. 예: [2,3] */
-  var PHONE='01066536294', ACCT='3510320363543';
+  var PHONE='01066536294';
   var fm=document.getElementById('fm'), body=document.getElementById('fmBody'), $=function(id){return document.getElementById(id);};
   var SLOTTXT={1:'1타임 14:00~14:20',2:'2타임 14:30~14:50',3:'3타임 15:00~15:20',4:'4타임 15:30~15:50',5:'5타임 16:00~16:20'};
   function val(n){var e=fm.querySelector('input[name="'+n+'"]:checked');return e?e.value:'';}
@@ -513,8 +512,6 @@ body{font-family:'Pretendard','Noto Sans KR','Malgun Gothic',sans-serif;color:va
   if(ob)ob.addEventListener('click',function(e){e.preventDefault();open();});
   $('fmClose').addEventListener('click',close);
   document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});
-  $('cpAcct').addEventListener('click',function(){copy(ACCT,'계좌번호를 복사했어요');});
-  $('cpAcct2').addEventListener('click',function(){copy(ACCT,'계좌번호를 복사했어요');});
   /* 검증 */
   function check(){
     var bad=[];
@@ -545,8 +542,7 @@ body{font-family:'Pretendard','Noto Sans KR','Malgun Gothic',sans-serif;color:va
       '알레르기: '+al+(al==='있음'&&an?' - '+an:''),
       '사진 촬영·활용: '+val('photo'),
       '동의: 환급안내 확인, 개인정보, 알레르기정보',
-      '입금자명: '+g+'('+k+')',
-      '(참가비 1만원 · 농협 351-0320-3635-43 춘천두레소비자생활협동조합)'];
+      '입금자명: '+g+'('+k+')'];
     return L.join('\n');
   }
   function smsUrl(t){
