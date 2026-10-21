@@ -466,8 +466,8 @@ body{font-family:'Pretendard','Noto Sans KR','Malgun Gothic',sans-serif;color:va
 </script>
 <script>
 (function(){
-  var CLOSED=[1]; /* 마감된 타임 번호. 예: [2,3] */
-  var REMAIN={2:1,3:1}; /* 남은 자리가 적은 타임 {타임:남은 자리} */
+  var CLOSED=[1,3]; /* 마감된 타임 번호. 예: [2,3] */
+  var REMAIN={2:1}; /* 남은 자리가 적은 타임 {타임:남은 자리} */
   var SIB_FROM=4; /* 형제·자매 함께 신청이 가능한 첫 타임 (0이면 제한 없음) */
   var PHONE='01066536294';
   var fm=document.getElementById('fm'), body=document.getElementById('fmBody'), $=function(id){return document.getElementById(id);};
