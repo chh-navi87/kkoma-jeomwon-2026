@@ -180,6 +180,9 @@ body{font-family:'Pretendard','Noto Sans KR','Malgun Gothic',sans-serif;color:va
 .fm a.go{text-decoration:none;text-align:center}
 .fm .go.alt{background:#fff;color:var(--ink);border:2px solid var(--ink);font-size:19px;padding:11px 8px 13px;margin-top:10px}
 .fm pre{margin-top:10px;white-space:pre-wrap;word-break:break-all;font:inherit;font-size:14.5px;line-height:1.6;background:#faf5ea;border-radius:12px;padding:10px 12px}
+.cl{position:relative;margin:0 0 10px;background:var(--red);color:#fff;border-radius:18px;padding:9px 12px 11px;box-shadow:0 4px 0 #a82d2d}
+.cl b{display:block;font-family:'Jua','Noto Sans KR',sans-serif;font-weight:400;font-size:clamp(23px,6.8vw,28px);line-height:1.25}
+.cl small{display:block;font-size:14.5px;font-weight:700;color:#ffe3e0}
 .toast{position:absolute;left:50%;bottom:24px;transform:translateX(-50%);background:var(--ink);color:#fff;font-size:15px;font-weight:700;padding:9px 18px;border-radius:999px;z-index:30;display:none}
 .toast.on{display:block}
 </style>
@@ -523,6 +526,8 @@ body{font-family:'Pretendard','Noto Sans KR','Malgun Gothic',sans-serif;color:va
   if(ob)ob.addEventListener('click',function(e){e.preventDefault();if(!ALL)open();});
   if(ALL){
     if(ob){ob.innerHTML='신청이 마감됐어요<small>관심 가져 주셔서 감사합니다</small>';ob.style.background='#9a8a78';ob.setAttribute('aria-disabled','true');}
+    var s1=document.querySelector('#s1 .in'),tg=s1&&s1.querySelector('.tag');
+    if(tg){var bn=document.createElement('div');bn.className='cl';bn.setAttribute('role','status');bn.innerHTML='<b>🙏 신청이 모두 마감되었어요</b><small>많은 관심 가져 주셔서 감사합니다</small>';s1.insertBefore(bn,tg);window.dispatchEvent(new Event('resize'));}
     var hw=fm.querySelector('.how');if(hw)hw.innerHTML='<em>모든 타임의 신청이 마감됐어요.</em> 관심 가져 주셔서 감사합니다.';
     var sb=$('submit');sb.disabled=true;sb.textContent='신청이 마감됐어요';
   }
