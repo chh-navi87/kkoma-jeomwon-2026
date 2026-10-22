@@ -466,8 +466,8 @@ body{font-family:'Pretendard','Noto Sans KR','Malgun Gothic',sans-serif;color:va
 </script>
 <script>
 (function(){
-  var CLOSED=[1,2,3,4]; /* 마감된 타임 번호. 예: [2,3] */
-  var REMAIN={5:1}; /* 남은 자리가 적은 타임 {타임:남은 자리} */
+  var CLOSED=[1,2,3,4,5]; /* 마감된 타임 번호. 예: [2,3] */
+  var REMAIN={}; /* 남은 자리가 적은 타임 {타임:남은 자리} */
   var SIB_FROM=0; /* 형제·자매 함께 신청이 가능한 첫 타임 (0이면 제한 없음) */
   var PHONE='01066536294';
   var fm=document.getElementById('fm'), body=document.getElementById('fmBody'), $=function(id){return document.getElementById(id);};
@@ -519,7 +519,13 @@ body{font-family:'Pretendard','Noto Sans KR','Malgun Gothic',sans-serif;color:va
   function open(){fm.classList.add('on');body.scrollTop=0;}
   function close(){fm.classList.remove('on');}
   var ob=document.getElementById('openForm');
-  if(ob)ob.addEventListener('click',function(e){e.preventDefault();open();});
+  var ALL=[1,2,3,4,5].every(function(n){return CLOSED.indexOf(n)>-1;});
+  if(ob)ob.addEventListener('click',function(e){e.preventDefault();if(!ALL)open();});
+  if(ALL){
+    if(ob){ob.innerHTML='신청이 마감됐어요<small>관심 가져 주셔서 감사합니다</small>';ob.style.background='#9a8a78';ob.setAttribute('aria-disabled','true');}
+    var hw=fm.querySelector('.how');if(hw)hw.innerHTML='<em>모든 타임의 신청이 마감됐어요.</em> 관심 가져 주셔서 감사합니다.';
+    var sb=$('submit');sb.disabled=true;sb.textContent='신청이 마감됐어요';
+  }
   $('fmClose').addEventListener('click',close);
   document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});
   /* 검증 */
